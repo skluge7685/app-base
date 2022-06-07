@@ -1,6 +1,6 @@
 {
   "name": "app_base",
-  "entry_point": "service.js",
+  "entry_point": "app.js",
   "environment": {
     "AMQP_USER": "",
     "AMQP_PASS": "",
