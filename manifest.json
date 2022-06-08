@@ -2,10 +2,6 @@
   "name": "app_base",
   "entry_point": "app.js",
   "environment": {
-    "AMQP_USER": "",
-    "AMQP_PASS": "",
-    "AMQP_HOST": "",
-    "AMQP_QUERE": "",
     "AMQP_AUTODELETE": "",
     "AMQP_MESSAGE_TTL": ""
   },
