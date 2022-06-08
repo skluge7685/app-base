@@ -93,6 +93,12 @@ module.exports = class ServiceNode{
         if(process.env.AMQP_AUTODELETE == undefined) { this.logger.log('error', 'AMQP_AUTODELETE not defined.', {tags: 'AMQP'}); process.exit(1); }
         if(process.env.AMQP_MESSAGE_TTL == undefined) { this.logger.log('error', 'AMQP_MESSAGE_TTL not defined.', {tags: 'AMQP'}); process.exit(1); }
     
+        //Checks
+        if(process.env.AMQP_HOST == '') {
+            this.logger.log('error', 'amqp hostname is not valid', {tags: 'AMQP'});
+            process.exit(1);
+        }
+
         const opt = { credentials: require('amqplib').credentials.plain(process.env.AMQP_USER, process.env.AMQP_PASS) };
         amqplib.connect(process.env.AMQP_HOST + "?heartbeat=60", opt, (err, conn) => {
 
